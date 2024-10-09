@@ -1,0 +1,68 @@
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-size: 1rem;
+}
+section{
+    height: 100vh;
+}
+
+.blue{
+    background-color: blue;
+}
+
+.red{
+    background-color: red;
+}
+
+.green{
+    background-color: green;
+}
+
+header, footer{
+    color: whitesmoke;
+    text-align: center;
+    height: 80px;
+    padding: 1rem;
+    justify-content: center;
+}
+
+header{
+    font-size: 4rem;
+    position: sticky;
+    top: 0px;
+}
+
+footer{
+    position: sticky;
+    bottom: 0;
+    font-size: 2rem;
+    background-color: black;
+    /* width: 100%; */
+}
+
+a{
+    color: whitesmoke;
+}
+
+.dhuddu{
+    background-color: aquamarine;
+    font-size: inherit;
+    color: blue;
+    position: fixed;
+    top: 30%;
+    left: 0;
+    z-index: 1;
+}
+
+.dhuddu1{
+    background-color: aquamarine;
+    font-size: inherit;
+    color: blue;
+    position: fixed;
+    top: 35%;
+    left: 0%;
+    z-index: 1;
+}
+

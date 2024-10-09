@@ -1,0 +1,28 @@
+body{
+    padding: 10%;
+    font-size: 1rem;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: rgb(0, 128, 0);
+    opacity: 0.8;
+}
+
+a:visited {
+    color: slategrey;
+}
+
+a:hover, a:focus {
+    color: gold;
+    text-decoration: underline;
+    text-decoration-color: red;
+    background-color: forestgreen;
+}
+
+a:active {
+    color: red;
+    text-decoration-color: darkgreen;
+}
+

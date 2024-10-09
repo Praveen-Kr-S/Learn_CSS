@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 1.5rem;
+    min-height: 200vw;
+}
+
+.outer-container{
+    border: 3px dashed black;
+    width: 75vw;
+    height: 200vh;
+    margin: 40px auto;
+    position: relative;
+}
+
+.inner-container{
+    border: 2px solid blue;
+    width: 40vw;
+    height: 50vh;
+    margin: 150px auto;
+}
+
+.box{
+    width: 100px;
+    height: 100px;
+    color: white;
+    padding: 0.5rem;
+}
+
+.absolute{
+    background-color: blue;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.relative{
+    background-color: red;
+    position: relative;
+    top: 150px;
+    left: 100px;
+}
+
+.fixed{
+    background-color: green;
+    position: fixed;
+    top: 0;
+    left: 200px;
+}
+
+.sticky{
+    background-color: black;
+    position: sticky;
+    top:20px;
+    left:50px  ;
+}

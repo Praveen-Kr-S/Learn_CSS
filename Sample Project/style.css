@@ -1,0 +1,216 @@
+/* ||Rest */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* || Utility Classes */
+.nowrap{
+    white-space: nowrap;
+}
+
+/* ||General Styles */
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    background-color: lightgray;
+    background-image: radial-gradient(whitesmoke, lightgray);
+    display: flex;
+    flex-direction: column;
+}
+
+:where(header, footer) {
+    position: sticky;
+    background-color: darkslategrey;
+    color: whitesmoke;
+    text-align: center;
+}
+
+header{
+    top: 0;
+    color: green;
+    text-shadow: 1px 1px 2px yellow;
+}
+
+nav{
+    background-color: #fff;
+    padding: 0.5rem;
+    border-bottom: 2px solid crimson;
+    font-weight: bolder;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+nav :any-link {
+    color: yellowgreen;
+}
+
+nav :is(a:hover, a:focus) {
+    color: crimson;
+}
+
+nav a:active{
+    color: steelblue;
+}
+
+main{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+footer{
+    bottom: 0;
+}
+
+/* || Profile Card */
+.card{
+    scroll-margin-top: 8rem;
+    width: min(100%, 350px);
+    background-color: grey;
+    border: 2px solid #000;
+    border-radius: 15px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card:target{
+    border: 10px solid green;
+}
+
+.card figure{
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.card img{
+    border: 5px double #333;
+    border-radius: 50%;
+}
+
+.card figcaption{
+    font-weight: bolder;
+    font-size: 2rem;
+    margin: 1rem;
+    text-align: center;
+}
+
+.card figcaption::before{
+    content: ' \2728';
+    display: block;
+}
+
+.card:last-child{
+    background-color: bisque;
+}
+
+.card:nth-child(even){
+    background-color: lightgreen;
+}
+
+.card img[alt]{
+    border: 5px solid red;
+}
+
+.card p::before{
+    content: open-quote;
+    font-size: 3rem;
+}
+.card p::after{
+    content: close-quote;
+    font-size: 3rem;
+}
+
+.card img:not([alt]){
+    border: 5px solid blue;
+}
+/* || Small */
+@media screen and (min-width:576px){
+    main{
+        justify-content: center;
+        flex-flow: row wrap;
+        padding: 1rem;
+    }
+
+    .card{
+        width: min(100%, 400px);
+    }
+
+    .card:last-child{
+        order: -1;
+    }
+}
+
+/* || Medium */
+@media screen and (min-width:768px){
+    nav{
+        display: none;
+    }
+
+    .card{
+        width: min(100%, 350px);
+    }
+
+    .card figure{
+        flex-flow: column-reverse;
+    }
+
+    .card{
+        margin-top: 1rem;
+    }
+
+}
+
+/* || Large */
+@media screen and (min-width:992px){
+
+    .card{
+        width: min(100%, 400px);
+    }
+
+    .card:nth-child(2){
+        order: -1;
+    }
+
+}
+
+/* || Extra Large */
+@media screen and (min-width:1200px){
+    
+    .card{
+        /* Remove Calc()-min() supports math! */
+        width: min(33% - 1rem, 500px);
+    }
+}
+
+/* || Mobile Device Landscape */
+@media screen and (max-height:425px) and (min-aspect-ratio:7/4){
+    h1{
+        font-size: 1.5rem;
+    }
+
+    nav{
+        display: none;
+    }
+
+    main{
+        flex-flow: row nowrap;
+    }
+}

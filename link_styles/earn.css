@@ -1,0 +1,50 @@
+body{
+    padding: 10%;
+    font-size: 1rem;
+}
+
+ol {
+    list-style-type: lower-alpha;
+}
+
+ul{
+    list-style-type: square;
+    text-align: center;
+    list-style-position: inside;
+    /* list-style-image: url(); */
+    color: red;
+}
+
+ol li {
+    color: blue;
+}
+
+ul li {
+    color: brown;
+}
+
+ul li:nth-child(2){
+    color: rgb(49, 127, 28);
+}
+
+ul li:nth-last-child(1){
+    color: deeppink;
+}
+
+ol li:nth-child(1){
+    color: rgb(14, 123, 123);
+    text-transform: uppercase;
+}
+
+ol li:nth-child(2)::marker{
+    color: darkgoldenrod;
+    font-size: 2em;
+}
+
+ol li:nth-child(1)::marker{
+    color: red;
+}
+
+ul li::marker{
+    content: "CLICK >>> ";
+}

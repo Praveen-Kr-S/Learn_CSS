@@ -1,0 +1,52 @@
+/* Chapter-2 = Selector */
+
+/* 4 differnt types of selectors */
+
+/* 4.Universal Selcetor */
+*{
+    font-family: monospace;
+}
+
+/* 1.Element Slector */
+body{
+    font-size: 20px;
+    border: 10px solid rgba(226, 33, 65, 0.665);
+}
+
+/* element group */
+h1, h2{
+    color:black;
+}
+
+p{
+    color: blue;
+}
+
+/* inside element select */
+p span{
+    background-color: rgb(255, 255, 0);
+    color: rgb(0, 0, 255);
+}
+
+/* Class Selector */
+.gray{
+    color: rgb(154, 205, 50);
+    font-style: italic;
+}
+
+.highlight{
+    color: rgb(255, 0, 0);
+}
+
+/* Id Selctor */
+#second{
+    color: rgb(216, 112, 147);
+}
+
+/* inherit */
+
+button, input, textarea {
+    font: inherit;
+}
+
+

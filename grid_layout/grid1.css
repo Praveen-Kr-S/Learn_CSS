@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    display: grid;
+    min-height: 200px;
+    min-width: 100px;
+    grid-template-columns: repeat(3, 2fr 1fr);
+}
+
+.name1{
+    background-color: orangered;
+}
+.name2{
+    background-color: lightseagreen;
+}
+.name3{
+    background-color: green;
+}
+.name4{
+    background-color: blueviolet;
+}
+.name5{
+    background-color: yellowgreen;
+}
+.name6{
+    background-color: yellow;
+}
+
+
+

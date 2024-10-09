@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Inspiration&family=Nunito&family=Poppins:wght@300;400;500;700&display=swap');
+
+/* || Reset */
+*{
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+/* ||CSS- VARIABLES */
+:root{
+    /* FONT */
+    --FF:'Nunito', sans-serif;
+    --FS:clamp(0.75rem, 2vh, 1.5rem);
+    --FS-L:2rem;
+    --FS-XL:3rem;
+
+    /* COLOR */
+    --BGCOLOR : steelblue;
+    --KAAVI : rgb(255, 115, 0);
+    --RADIAL-COLOR: white;
+    --DARK-COLOR: black;
+
+    /* GENERAL */
+    --PADDING: 0.5 rem;
+    --SHADOWS: 0 6px 5px -5px var(--DARK-COLOR);
+    --BORDERS: 2px solid var(--DARK-COLOR);
+
+    /* SQUARE */
+    --SQUARE-BGCOLOR: papayawhip;
+    --SQUARE-SIZE: max(150px, 20vw);
+}
+
+/*  DARK MODE    */
+@media (prefers-color-scheme:dark){
+    :root{
+        --BGCOLOR: black;
+        --KAAVI: black;
+        --RADIAL-COLOR: rgb(121, 41, 121);
+    }
+}
+
+/* || General Styles */
+body{
+    font-size: var(--FS);
+    font-family: var(--FF);
+    min-height: 100vh;
+    background-color: var(--BGCOLOR);
+    background-image: radial-gradient(var(--RADIAL-COLOR), var(--KAAVI));
+    display: flex;
+    flex-direction: column;
+}
+
+header,nav,footer{
+    display: grid;
+    place-content: center;
+    grid-template-columns: 100%;
+    text-align: center;
+}
+
+header,footer{
+    position: sticky;
+    background-color: var(--DARK-COLOR);
+    color: whitesmoke;
+}
+
+header{
+    top: 0;
+}
+
+nav{
+    background-color: whitesmoke;
+    color: var(--DARK-COLOR);
+    padding: var(--PADDING);
+    border-bottom: var(--BORDERS);
+    box-shadow: var(--SHADOWS);
+}
+
+main{
+    flex-grow: 1;
+    display: flex;
+    padding: 10px 0;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-flow: row wrap;
+    gap: min(4vw, 15px);
+}
+
+.small,.medium,.large{
+    display: none;
+}
+
+footer{
+    bottom: 0;
+}
+
+.tooltip{
+    border-bottom: 1px dotted var(--DARK-COLOR);
+    position: relative;
+}
+
+.tooltip:hover::before{
+    content: attr(data-tooltip);
+    position: absolute;
+    top: -25px;
+    background-color: dimgray;
+    color: white;
+}
+
+.square{
+    background-color: var(--SQUARE-BGCOLOR);
+    width: var(--SQUARE-SIZE);
+    height: var(--SQUARE-SIZE);
+    border: var(--BORDERS);
+    border-radius: 15px;
+    display: grid;
+    place-content: center;
+    font-size: var(--FS-XL);
+    box-shadow: var(--SHADOWS);
+}
+
+.square--highlights{
+    /* vaiable overwriting */
+    --SQUARE-BGCOLOR: blue;
+}
+
+
+/* || small */
+
+/* Syntax :
+@media media-type and (
+    condtion:breakpoint
+) {
+    //CSS Rule
+} */
+
+@media screen and (min-width:576px) {
+    body{
+        font-size: var(--FS-L);
+        background-color: pink;
+        background-image: linear-gradient(to bottom,rgb(255, 115, 0), white, green );
+    }
+
+    nav{
+        display: none;
+    }
+
+    .xsmall,.medium,.large{
+        display: none;
+    }
+    .small{
+        display: grid;
+    }
+}
+
+/* Medium */
+@media screen and (min-width:768px) {
+    body{
+        font-size: var(--FS-XL);
+        background-color: lightgoldenrodyellow;
+        background-image: linear-gradient(to bottom,lightgoldenrodyellow, pink, lightblue );
+    }
+
+    .small, .xsmall,.large{
+        display: none;
+    }
+    .medium{
+        display: grid;
+    }
+
+}
+
+/* Large */
+@media screen and (min-width:992px) {
+    body{
+        font-size: 4rem;
+        background-color: lightgreen;
+        background-image: linear-gradient(to bottom,lightgoldenrodyellow, lightgreen, lightblue );
+    }
+
+    .small, .xsmall,.medium{
+        display: none;
+    }
+    .large{
+        display: grid;
+    }
+
+}
+
+/* mobile screen landscape */
+@media screen and (max-height:425px) and (min-aspect-ratio: 7/4) {
+    body{
+        font-size: 1.5rem;
+        background-color: purple;
+        background-image: linear-gradient(to bottom,purple, lightgreen, lightblue );
+    }
+
+    .small,.medium,.large{
+        display: none;
+    }
+    .xsmall{
+        display: grid;
+    }
+
+}
